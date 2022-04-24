@@ -7,7 +7,7 @@ class NewTaskPage extends StatelessWidget {
       appBar: AppBar(title: Text('Add New Task')),
       body: ListView(
         children: [
-
+          
         ],
       ),
     );
