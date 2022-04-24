@@ -58,8 +58,13 @@ class _HomePageState extends State<HomePage> {
                     itemCount: _budgets.length,
                   ),
                 ],
-              )
+              ),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: (){
 
+                  },
+                  child: const Icon(Icons.add_rounded),
+                ) ,
             )
         )
     );
