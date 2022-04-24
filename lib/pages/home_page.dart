@@ -27,6 +27,12 @@ class _HomePageState extends State<HomePage> {
                   Tab(text: 'Yearly',)
                 ]),
                 title: const Text('Budgets'),
+                actions: [
+                  IconButton(onPressed: (){
+                    
+                  }, 
+                      icon: const Icon(Icons.edit))
+                ],
               ),
               body: TabBarView(
                 children: [
