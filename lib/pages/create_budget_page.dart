@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class NewTaskPage extends StatelessWidget {
+class CreateBudgetPage extends StatelessWidget {
+  const CreateBudgetPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Add New Task')),
+      appBar: AppBar(title: const Text('Add New Budget')),
       body: ListView(
         children: [
-          
+
         ],
       ),
     );

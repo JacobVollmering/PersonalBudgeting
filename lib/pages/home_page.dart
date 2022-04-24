@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:personal_budgeting/pages/create_budget_page.dart';
+import 'package:personal_budgeting/pages/edit_income.dart';
 import '../model/task.dart';
 import '../services/my_controller.dart';
 
@@ -29,7 +30,11 @@ class _HomePageState extends State<HomePage> {
                 title: const Text('Budgets'),
                 actions: [
                   IconButton(onPressed: (){
-                    
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => const EditIncomePage()))
+                        .then((result) async{
+
+                    });
                   }, 
                       icon: const Icon(Icons.edit))
                 ],
@@ -61,7 +66,11 @@ class _HomePageState extends State<HomePage> {
               ),
                 floatingActionButton: FloatingActionButton(
                   onPressed: (){
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => const CreateBudgetPage()))
+                        .then((result) async{
 
+                    });
                   },
                   child: const Icon(Icons.add_rounded),
                 ) ,
