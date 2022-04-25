@@ -1,4 +1,4 @@
-import '../model/task.dart';
+import '../model/budget.dart';
 import 'fake_data.dart';
 
 class MyController {

@@ -1,4 +1,4 @@
-import '../model/task.dart';
+import '../model/budget.dart';
 
 class FakeData {
   static List<Budget> getBudgets() {

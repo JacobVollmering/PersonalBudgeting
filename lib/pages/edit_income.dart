@@ -18,7 +18,7 @@ class EditIncomePage extends StatelessWidget {
               TextField(
                 minLines: 1,
                 maxLines: null,
-                decoration: const InputDecoration(hintText: 'Weekly Income',
+                decoration: const InputDecoration(hintText: ' Weekly Income',
                     prefix: Text("\$",
                         textAlign: TextAlign.right,)),
                 onChanged: (String value) {
@@ -28,7 +28,7 @@ class EditIncomePage extends StatelessWidget {
               TextField(
                 minLines: 1,
                 maxLines: null,
-                decoration: const InputDecoration(hintText: 'Monthly Income',
+                decoration: const InputDecoration(hintText: ' Monthly Income',
                     prefix: Text("\$",
                       textAlign: TextAlign.right,)),
                 onChanged: (String value) {
@@ -38,13 +38,17 @@ class EditIncomePage extends StatelessWidget {
               TextField(
                 minLines: 1,
                 maxLines: null,
-                decoration: const InputDecoration(hintText: 'Yearly Income',
+                decoration: const InputDecoration(hintText: ' Yearly Income',
                     prefix: Text("\$",
                       textAlign: TextAlign.right,)),
                 onChanged: (String value) {
                   context.read<PersonalBudgetViewModel>().changeNewYearlyIncome(value as double);
                 },
-              )
+              ),
+              ElevatedButton(onPressed: (){
+
+              },
+                  child: const Text('Save'))
             ],
           ),
         ));

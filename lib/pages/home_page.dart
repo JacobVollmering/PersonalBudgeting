@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_budgeting/pages/create_budget_page.dart';
 import 'package:personal_budgeting/pages/edit_income.dart';
-import '../model/task.dart';
+import '../model/budget.dart';
 import '../services/my_controller.dart';
 
 class HomePage extends StatefulWidget {
