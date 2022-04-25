@@ -5,7 +5,6 @@ import '../model/task.dart';
 import '../services/my_controller.dart';
 
 class HomePage extends StatefulWidget {
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -19,23 +18,29 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: DefaultTabController(
-          length: 3,
+            length: 3,
             child: Scaffold(
               appBar: AppBar(
                 bottom: const TabBar(tabs: [
-                  Tab(text: 'Weekly',),
-                  Tab(text: 'Monthly',),
-                  Tab(text: 'Yearly',)
+                  Tab(
+                    text: 'Weekly',
+                  ),
+                  Tab(
+                    text: 'Monthly',
+                  ),
+                  Tab(
+                    text: 'Yearly',
+                  )
                 ]),
                 title: const Text('Budgets'),
                 actions: [
-                  IconButton(onPressed: (){
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (_) => const EditIncomePage()))
-                        .then((result) async{
-
-                    });
-                  }, 
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(
+                                builder: (_) => const EditIncomePage()))
+                            .then((result) async {});
+                      },
                       icon: const Icon(Icons.edit))
                 ],
               ),
@@ -64,28 +69,24 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-                floatingActionButton: FloatingActionButton(
-                  onPressed: (){
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (_) => const CreateBudgetPage()))
-                        .then((result) async{
-
-                    });
-                  },
-                  child: const Icon(Icons.add_rounded),
-                ) ,
-            )
-        )
-    );
-
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(
+                          builder: (_) => const CreateBudgetPage()))
+                      .then((result) async {});
+                },
+                child: const Icon(Icons.add_rounded),
+              ),
+            )));
   }
 
   Widget _toWidget(Budget b) {
     return ListTile(
       key: ValueKey(b),
-      title: Text(b.description,
+      title: Text(
+        b.description,
       ),
     );
   }
 }
-
