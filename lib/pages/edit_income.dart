@@ -18,37 +18,49 @@ class EditIncomePage extends StatelessWidget {
               TextField(
                 minLines: 1,
                 maxLines: null,
-                decoration: const InputDecoration(hintText: ' Weekly Income',
-                    prefix: Text("\$",
-                        textAlign: TextAlign.right,)),
+                decoration: const InputDecoration(
+                    hintText: ' Weekly Income',
+                    prefix: Text(
+                      "\$",
+                      textAlign: TextAlign.right,
+                    )),
                 onChanged: (String value) {
-                  context.read<PersonalBudgetViewModel>().changeNewWeeklyIncome(value as double);
+                  context
+                      .read<PersonalBudgetViewModel>()
+                      .changeNewWeeklyIncome(value as double);
                 },
               ),
               TextField(
                 minLines: 1,
                 maxLines: null,
-                decoration: const InputDecoration(hintText: ' Monthly Income',
-                    prefix: Text("\$",
-                      textAlign: TextAlign.right,)),
+                decoration: const InputDecoration(
+                    hintText: ' Monthly Income',
+                    prefix: Text(
+                      "\$",
+                      textAlign: TextAlign.right,
+                    )),
                 onChanged: (String value) {
-                  context.read<PersonalBudgetViewModel>().changeNewMonthlyIncome(value as double);
+                  context
+                      .read<PersonalBudgetViewModel>()
+                      .changeNewMonthlyIncome(value as double);
                 },
               ),
               TextField(
                 minLines: 1,
                 maxLines: null,
-                decoration: const InputDecoration(hintText: ' Yearly Income',
-                    prefix: Text("\$",
-                      textAlign: TextAlign.right,)),
+                decoration: const InputDecoration(
+                    hintText: ' Yearly Income',
+                    prefix: Text(
+                      "\$",
+                      textAlign: TextAlign.right,
+                    )),
                 onChanged: (String value) {
-                  context.read<PersonalBudgetViewModel>().changeNewYearlyIncome(value as double);
+                  context
+                      .read<PersonalBudgetViewModel>()
+                      .changeNewYearlyIncome(value as double);
                 },
               ),
-              ElevatedButton(onPressed: (){
-
-              },
-                  child: const Text('Save'))
+              ElevatedButton(onPressed: () {}, child: const Text('Save'))
             ],
           ),
         ));
