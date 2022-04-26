@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "593861057498",
+    "project_id": "personal-budgeting-bc6d4",
+    "storage_bucket": "personal-budgeting-bc6d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593861057498:android:b0f0ed7cd8dfc4b9d6fee3",
+        "android_client_info": {
+          "package_name": "oc.jacob_vollmering.personal_budgeting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593861057498-onu860b11rqs2gqh32fjo142rk370vgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt3cn7_6YeW3s6SxRSvzaupJFdsJhYIhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593861057498-onu860b11rqs2gqh32fjo142rk370vgm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
