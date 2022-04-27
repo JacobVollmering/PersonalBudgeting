@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:personal_budgeting/viewModels/personal_budeget_view_model.dart';
 import 'package:provider/provider.dart';
 
-class CreateBudgetPage extends StatelessWidget {
-  const CreateBudgetPage({Key? key}) : super(key: key);
+class CreateBudgetPage extends StatefulWidget {
+  @override
+  _CreateBudgetPageState createState() => _CreateBudgetPageState();
+}
+
+class _CreateBudgetPageState extends State<CreateBudgetPage> {
+  String dropdownValue = 'weekly';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +50,31 @@ class CreateBudgetPage extends StatelessWidget {
                       .changeNewBudgetValSpent(value as double);
                 },
               ),
-              ElevatedButton(onPressed: () {}, child: const Text('Save'))
+              ElevatedButton(
+                  onPressed: () => Navigator.of(context)
+                      .pop(context.read<PersonalBudgetViewModel>().newBudget),
+                  child: const Text('Save')),
+              DropdownButton<String>(
+                value: dropdownValue,
+                icon: const Icon(Icons.arrow_downward),
+                elevation: 16,
+                style: const TextStyle(color: Colors.blueAccent),
+                underline: Container(
+                  height: 2,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                },
+                items: <String>['weekly', 'monthly', 'yearly']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              )
             ],
           ),
         ));

@@ -19,7 +19,13 @@ class FirestoreBackend implements Storage {
   static const _timePeriod = 'time_period';
 
   Future<List<Budget>> getBudgets(String timePeriod) async {
-    return [];
+    final ds = await FirebaseFirestore.instance.collection(_timePeriod).doc(timePeriod).collection(_budgets).get();
+    print(timePeriod + ds.docs.length.toString());
+    return ds.docs
+        .map((e) => Budget( description: e.get(_description), id: e.id, amount: e.get(_amount)))
+        .toList();
+
+    //.where('timePeriod', isEqualTo: timePeriod)
   }
   Future<Budget> insertBudget(String description) async {
     return Budget(id: '1', amount: 100);
