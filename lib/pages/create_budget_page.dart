@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:personal_budgeting/model/budget.dart';
+import 'package:personal_budgeting/services/my_controller.dart';
 import 'package:personal_budgeting/viewModels/personal_budeget_view_model.dart';
 import 'package:provider/provider.dart';
+
+import 'home_page.dart';
 
 class CreateBudgetPage extends StatefulWidget {
   @override
@@ -37,7 +41,7 @@ class _CreateBudgetPageState extends State<CreateBudgetPage> {
                 onChanged: (String value) {
                   context
                       .read<PersonalBudgetViewModel>()
-                      .changeNewBudgetVal(value as double);
+                      .changeNewBudgetVal(double.parse(value));
                 },
               ),
               TextField(
@@ -47,12 +51,19 @@ class _CreateBudgetPageState extends State<CreateBudgetPage> {
                 onChanged: (String value) {
                   context
                       .read<PersonalBudgetViewModel>()
-                      .changeNewBudgetValSpent(value as double);
+                      .changeNewBudgetValSpent(double.parse(value));
                 },
               ),
               ElevatedButton(
-                  onPressed: () => Navigator.of(context)
-                      .pop(context.read<PersonalBudgetViewModel>().newBudget),
+                  onPressed: () {
+                    Budget budget = Budget(description: context.read<PersonalBudgetViewModel>().newBudget,
+                        amount: context.read<PersonalBudgetViewModel>().newBudgetVal);
+                    MyController.insertBudget(dropdownValue, budget);
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(
+                        builder: (_) => HomePage()))
+                        .then((result) async {});
+                  },
                   child: const Text('Save')),
               DropdownButton<String>(
                 value: dropdownValue,
@@ -61,6 +72,7 @@ class _CreateBudgetPageState extends State<CreateBudgetPage> {
                 style: const TextStyle(color: Colors.blueAccent),
                 underline: Container(
                   height: 2,
+                  color: Colors.blueAccent,
                 ),
                 onChanged: (String? newValue) {
                   setState(() {

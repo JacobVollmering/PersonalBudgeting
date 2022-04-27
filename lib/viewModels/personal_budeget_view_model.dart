@@ -30,6 +30,7 @@ class PersonalBudgetViewModel extends ChangeNotifier {
 
   void changeNewBudgetVal(double newBudgetVal) {
     _newBudgetVal = newBudgetVal;
+    print(_newBudgetVal);
   }
 
   void changeNewBudgetValSpent(double newBudgetValSpent) {

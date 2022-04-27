@@ -27,7 +27,7 @@ class EditIncomePage extends StatelessWidget {
                 onChanged: (String value) {
                   context
                       .read<PersonalBudgetViewModel>()
-                      .changeNewWeeklyIncome(value as double);
+                      .changeNewWeeklyIncome(double.parse(value));
                 },
               ),
               TextField(
@@ -42,7 +42,7 @@ class EditIncomePage extends StatelessWidget {
                 onChanged: (String value) {
                   context
                       .read<PersonalBudgetViewModel>()
-                      .changeNewMonthlyIncome(value as double);
+                      .changeNewMonthlyIncome(double.parse(value));
                 },
               ),
               TextField(
@@ -57,7 +57,7 @@ class EditIncomePage extends StatelessWidget {
                 onChanged: (String value) {
                   context
                       .read<PersonalBudgetViewModel>()
-                      .changeNewYearlyIncome(value as double);
+                      .changeNewYearlyIncome(double.parse(value));
                 },
               ),
               ElevatedButton(onPressed: () {}, child: const Text('Save'))

@@ -12,9 +12,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // final Future<List<Budget>> _tasksFuture = MyController.getBudgets();
   // List<Budget>? _tasks;
-  final _budgetsW = MyController.getBudgets('weekly');
-  final _budgetsM = MyController.getBudgets('monthly');
-  final _budgetsY = MyController.getBudgets('yearly');
+  var _budgetsW = MyController.getBudgets('weekly');
+  var _budgetsM = MyController.getBudgets('monthly');
+  var _budgetsY = MyController.getBudgets('yearly');
 
   @override
   Widget build(BuildContext context) {

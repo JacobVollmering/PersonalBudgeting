@@ -27,8 +27,15 @@ class FirestoreBackend implements Storage {
 
     //.where('timePeriod', isEqualTo: timePeriod)
   }
-  Future<Budget> insertBudget(String description) async {
-    return Budget(id: '1', amount: 100);
+  Future<Budget> insertBudget(String timePeriod, Budget budget) async {
+    final CollectionReference cRef = FirebaseFirestore.instance
+        .collection(_timePeriod)
+        .doc(timePeriod)
+        .collection(_budgets);
+    DocumentReference docRef = await cRef.add({"description": budget.description, "amount": budget.amount});
+
+    print(docRef.id);
+    return Budget(description: budget.description, id: docRef.id, amount: budget.amount);
   }
   Future<Budget> editBudget(String description) async{
     return Budget(id: '2', amount: 101);

@@ -9,4 +9,7 @@ class MyController {
    static Future<List<Budget>> getBudgets(String timePeriod) {
     return storage.getBudgets(timePeriod);
   }
+  static Future<Budget> insertBudget(String timePeriod, Budget budget){
+     return storage.insertBudget(timePeriod, budget);
+  }
 }
