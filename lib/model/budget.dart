@@ -1,7 +1,7 @@
 class Budget {
   final String description;
   final String id;
-  int amount;
+  double amount;
 
   Budget({this.description = '', required this.id, required this.amount});
 }
